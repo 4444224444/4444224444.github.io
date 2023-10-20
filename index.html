@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유페이지</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        body{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <a style="color: purple;" href="sub.html">서브페이지</a>
+    <a href="http://www.naver.com" target="_blank" title="naver">네이버 바로가기</a>
+    <a href="http://cafe.naver.com">카페 바로가기</a>
+    <a href="http://www.google.com">구글 바로가기</a>
+    
+    <img width="100px" height="auto" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20220210_278%2F16444912942726F8DO_JPEG%2F45627190005268387_1979373081.jpg&type=sc960_832">
+    <img width="100px" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20220210_278%2F16444912942726F8DO_JPEG%2F45627190005268387_1979373081.jpg&type=sc960_832" /> 
+
+    <a href="http://www.naver.com" target="_blank">
+       <img width="100px" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20220210_278%2F16444912942726F8DO_JPEG%2F45627190005268387_1979373081.jpg&type=sc960_832" />
+    </a>
+
+    <h1>대한민국</h1>
+        <h2>서울특별시</h2>
+        <h3>영등포구</h3>
+        <h2>경기도</h2>
+        <h3>안양시</h3>
+        <h3>의왕시</h3>
+        <h1>미국</h1>
+        <h1>일본</h1>
+        <h1>중국</h1>     
+
+        <p>문단은 한가지 주제를 가지고 있는 여러 문장으로 이루어진 단</p>
+
+        html에서는                띄어쓰기, <br /> 줄바꿈 무시
+        <hr />
+
+        <strong>강한 강조</strong> 
+        <em>강조</em>
+        <!--의미를 부여 (권장) -->
+
+        <b>굵은 글씨</b>
+        <i>기울임꼴(이탈릭체)</i>
+        <!--모양를 부여 (비권장) -->
+
+        <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li>리스트3</li>
+        </ul>
+        <ol>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li>리스트3</li>
+        </ol>
+        <dl>
+            <dt>용어</dt>
+            <dd>용어설명</dd>
+            <dt>HTML</dt>
+            <dd>Hyper Text Markup Language</dd>
+        <style>
+            <dl>th,td{
+            border: solid 1px black;
+        }
+        </style> <!-- CSS-->
+        <table summary="table기본">
+            <caption>table기본형태</caption>
+            <thead>
+            <tr>
+                <th scope="col" rowspan="2">제목1</th>
+                <th scope="col" colspan="2">제목2</th>
+                <th scope="col">제목3</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>내용1</td> <!--내용 한 칸-->
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+
+            <tbody>
+            <!--표 본문-->
+            </tbody>
+
+            <tfoot>
+            <!--표 꿑-->
+            </tfoot>
+
+        </table>
+            <div>블록(block)형 구획 나눔</div>
+            <span>인라인(inline)형 구획 나눔</span>
+            <!--의미 없이 사용하기 좋은 태그-->
+
+        <form>
+      
+        <label for="number">주민등록번호</label>
+        <input name="number" type="text" placeholder="-기호 없이 숫자만 입력해 주세요" />
+        <input type="text" value="123456" />
+        <input type="password" />
+
+        <input type="radio" value="1" name="p1" checked /> 사과
+        <input type="radio" value="2" name="p1" /> 배
+        <input type="radio" value="3" name="p1" /> 딸기
+
+        <input type="checkbox" value="1" checked /> 빨강
+        <input type="checkbox" value="2" /> 파랑
+        <input type="checkbox" value="3" /> 노랑
+
+        <select>
+            <option>네이버</option>
+            <option>구글</option>
+            <option>계원</option>
+        </select>
+
+        <textarea rows="5" cols="60"> 여러 줄의 장문 작성 </textarea>
+
+        <input onclick="alert('버튼눌림');" type="button" value="버튼입니다" />
+        <button>
+            <strong>
+                <ins>버튼입니다</ins>
+            </strong>
+        </button>
+        <input type="submit" value="제출" />
+
+
+        
+        </form>
+    <div></div>
+    <section>
+        <h1>구획 제목</h1>
+        구획 내용
+    </section>
+    <nav>
+        <ul>
+            <li><a href="링크주소1">버튼1</a></li>
+            <li><a href="링크주소2">버튼2</a></li>
+        </ul>
+        <a href="링크주소1">버튼1</a>
+        <a href="링크주소2">버튼2</a>
+    </nav>
+    <atricle> <!--문서 주제와 다소 벗어난 이야기-->
+        <h1>기사 제목</h1>
+        기사 내용
+    </atricle>
+    <aside> <!--상관없는 이야기-->
+        <h1>광고 제목</h1>
+        광고 내용
+    </aside>
+    <header></header> <!--본문(body)의 서론-->
+    <footer></footer> <!--본문(body)의 결론-->
+
+    <canvas id="myCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        //get element by id
+        //id 기준으로 요소 가져오기
+        var ctx = canvas.getContext("2d");
+        //get context 내용 가져오기
+        ctx.fillStyle = "#FF0000"; //색을 지정합니다
+        ctx.fillRect(25, 25, 100, 100); //채움 사각형
+        ctx.clearRect(45, 45, 60, 60); //사각형태로 지우기
+        ctx.strokeRect(50, 50, 50, 50); //윤곽 사각형
+    
+        ctx.fillStyle = "#000000";
+        ctx.beginPath(); //선그리기 시작
+        ctx.moveTo(65, 75); //펜 들어 움직이기
+        ctx.lineTo(90, 95); //선 그으며 움직이기
+        ctx.lineTo(90, 55);
+        ctx.fill(); //내부 채우기
+    
+        ctx.beginPath();
+        ctx.arc(225, 75, 50, 0, Math.PI * 2, true); // Outer circle 
+        ctx.moveTo(260, 75);
+        ctx.arc(225, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+        ctx.moveTo(215, 65);
+        ctx.arc(210, 65, 5, 0, Math.PI * 2, true);  // Left eye
+        ctx.moveTo(245, 65);
+        ctx.arc(240, 65, 5, 0, Math.PI * 2, true);  // Right eye
+        ctx.stroke();
+    </script>
+
+    <audio controls>
+        <source src="file_example_MP3_700KB.mp3" type="audio/mpeg" />
+    </audio>
+
+    <video controls>
+        <source src="file_example_MP4_480_1_5MG.mp4" type="video/mp4" />
+    </video>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/_Hu4GYtye5U?si=IfAd8YcBW_opTN9N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </body>
+</html> <!--종료 태그-->
