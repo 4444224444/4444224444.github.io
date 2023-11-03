@@ -79,7 +79,161 @@
     <div id="f1">first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter first line, first letter 
     </div>
 
+    <style>
+        #d2 div:first-child{
+            color:aquamarine
+        }
 
+        #d2 div:nth-child(2){
+            color:blueviolet
+        }
 
+        #d2 div:last-child{
+            color:chartreuse
+        }
+    </style>
+    <div id="d2">
+        <div>first child</div>
+        <div>middle child</div>
+        <div>last child</div>
+    </div>
+
+    <style>
+        a:link{ color:brown;} /*링크가 있을 때*/
+        a:visited{ color:aquamarine;} /*방문한 후*/
+        a:hover{ color:darkslateblue;} /*마우스를 올리면*/
+        a:active{ color:blueviolet;} /*클릭하면*/
+        a:focus{ color:darkgoldenrod;} /*포커스 되면*/
+    </style>
+    <a href="https://www.naver.com/">네이버</a>
+
+    <style>
+        #d3>span{ /*자식 요소 선택자*/
+            font-size: 30px;
+        }
+        #d3 span{ /*하위 요소 선택자*/
+            text-decoration: line-through;
+        }
+        #d3>div>span{
+            background-color: aquamarine;
+        }
+    </style>
+    <div id="d3">
+        <span>span1</span>
+        <div>
+            <span>span2</span>
+        </div>
+
+        <style>
+            #d4{ /* width, height, margin, border, padding */
+                width: 200px;
+                height: 200px;
+                border: solid 2px black;
+                border-right: solid 3px blue;
+                border-top: solid 4px yellow;
+                border-bottom: solid 5px green;
+
+                margin: 100px;
+                margin: 50px 100px; /*상하 좌우*/
+                margin: 50px 100px 150px 200px; /*상 우 하 좌*/
+                margin-left: 50px;                
+                margin-right: 100px;
+                margin-top: 150px;
+                margin-bottom: 200;
+
+                padding: 100px;
+                padding: 50px 100px; /*상하 좌우*/
+                padding: 50px 100px 150px 200px; /*상 우 하 좌*/
+                padding-left: 50px;                
+                padding-right: 100px;
+                padding-top: 150px;
+                padding-bottom: 200;
+            }
+        </style>
+        <div id="d4">div4</div>
+
+        <style>
+            #d5{
+                position: absolute; /*절대적인*/
+                left: 130px;
+                top: 130px;
+            }
+            #d6{
+                position:relative;
+                /*relative 부모는 absoulte자식의 기준이 된다*/
+            }
+        </style>
+        <div id="d6">
+        <div id="d5">absolute</div>
+        </div>
+
+        <style>
+            #d7{
+                position: fixed;
+                right: 0px;
+                top: 0px;
+            }
+        </style>
+        <div id="d7">top right</div>
+
+        <style>
+            #d8{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        </style>
+        <div id="d8">font family</div>
+
+        <style>
+            #d9{
+                text-align: center;
+            }
+        </style>
+        <div id="d9">text align</div>
+
+        <style>
+            #d10{
+                letter-spacing: 50px;
+            }
+        </style>
+        <div id="d10">letter spacing</div>
+
+        <style>
+            #d11{
+                white-space:pre;
+            }
+        </style>
+        <div id="d11">
+            a   b   c   
+            d   e
+        </div>
+
+        <style>
+            ul{
+                list-style-type:decimal;
+            }
+            ol{
+                list-style-type:lower-alpha;
+            }
+        </style>
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+        </ul>
+        <ol>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+        </ol>
+
+        <style>
+            #d12{
+                min-width: 200px;
+                max-width: 800px;
+                border-radius: 5px;
+                text-shadow: 2px 2px 1px blue;
+            }
+        </style>
+        <div id="d12">min width</div>
 </body>
 </html>
