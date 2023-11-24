@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout2</title>
+        <meta charset="UTF-8" />
+        <style>
+            #wrap{
+                min-width: 1000px;
+                max-width: 1920px;
+            }
+            header{
+                display: flex; /*내용을 가로배치 유연하게(flex)*/
+                justify-content: space-between;
+                background-color: lightgreen;
+                color: white;
+                padding: 10px 50px;
+            }
+            header ul{
+                list-style-type: none; /*리스트 모양 : 없음*/
+                display: flex;
+                padding: 0px;
+            }
+            header li{
+                padding: 0px 10px;
+            }
+            header h1{
+                margin: 5px;
+            }
+            header h1 span{
+                color: black;
+            }
+            #main_visual{
+                background-image: url("main_visual.png");
+                padding: 120px;
+                text-align: center;
+                color: white;
+                background-size: 100px auto;
+                background-repeat: no-repeat;
+                background-color: black;
+                background-size: contain; /*담기도록*/
+                background-size: cover; /*씌우도록*/
+                background-position: 50% 50%;
+            }
+            #main_visual p{
+                font-size: 20px;
+            }
+            #main_visual h2{
+                font-size: 50px;
+                letter-spacing: 15px;
+            }
+            .button{
+                background-color: rgb(167, 167, 5);
+                display: inline-block;
+                padding: 15px 70px;
+                margin-top: 150px;
+            }
+            section{
+                text-align: center;
+                color: gray;
+            }
+            section h3{
+                font-size: 30px;
+                color: rgb(34, 145, 108);
+            }
+            #content1{
+                padding: 80px;
+            }
+            #content1 ul{
+                display: flex;
+                list-style: none;
+                padding: 0px;
+                justify-content: stretch;
+                margin-top: 100px;
+            }
+            #content1 li{
+                border-right: solid 1px gray;
+                padding: 40px;
+            }
+            #content1 li:last-child{
+                border: none;
+            }
+            #content1 dt{
+                font-size: 19px;
+                font-weight: bold;
+                margin: 20px;
+            }
+            #content1 dd{
+                margin: 0px;
+            }
+            #content2 ul{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                list-style: none;
+                padding: 0px;
+                margin-top: 150px;
+            }
+            #content2 li{
+                width: 25%; /* li를 1/4 크기로 */
+            }
+            #content2 img{
+                width: 100%; /* 있을 수 있는 공간에서 최대크기 */
+                display: block; /* 글자취급하여 생기는 여백 해결 */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <h1>MY<span>FOLIO</span></h1>
+                <ul>
+                    <li>HOME</li>
+                    <li>ABOUT ME</li>
+                    <li>SERVICES</li>
+                    <li>MY WORKS</li>
+                    <li>CONTACT ME</li>
+                </ul>
+            </header>
+            <div id="main_visual">
+                <p>Lorem ipsum dolor sit iusmod tempor</p>
+                <h2>incididunt bore</h2>
+                <p>Orem ipsum dolor sit amet, consectetur</p>
+                <div class="button">KNOW MORE</div>
+            </div>
+            <section id="content1">
+                <h3>ABOUT ME</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat 
+                    duis aute irure dolor.
+                </p>
+                <ul>
+                     <li>
+                        <img src="iicon1.png"/>
+                        <dl>
+                            <dt>Title goes here</dt>
+                             <dd>
+                                    onsectetur adipisicing elit, sedo eiusmod tempor 
+                                    incidi et dolorerserss eerhfre mag.
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="iicon2.png"/>
+                        <dl>
+                            <dt>Title goes here</dt>
+                             <dd>
+                                    onsectetur adipisicing elit, sedo eiusmod tempor 
+                                    incidi et dolorerserss eerhfre mag.
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="iicon3.png"/>
+                        <dl>
+                            <dt>Title goes here</dt>
+                             <dd>
+                                    onsectetur adipisicing elit, sedo eiusmod tempor 
+                                    incidi et dolorerserss eerhfre mag.
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <img src="iicon4.png"/>
+                        <dl>
+                            <dt>Title goes here</dt>
+                             <dd>
+                                    onsectetur adipisicing elit, sedo eiusmod tempor 
+                                    incidi et dolorerserss eerhfre mag.
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+                </section>
+                <section id="content2">
+                    <h3>MY WORK</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                        sed do eiusmod tempor <br /> incididunt ut labore et dolore magna 
+                        aliqua.
+                    </p>
+                    <ul>
+                        <li><img src="work1.png"></li>
+                        <li><img src="work2.png"></li>
+                        <li><img src="work3.png"></li>
+                        <li><img src="work4.png"></li>
+                        <li><img src="work5.png"></li>
+                        <li><img src="work6.png"></li>
+                        <li><img src="work7.png"></li>
+                        <li><img src="work8.png"></li>
+                    </ul>
+                </section>
+</html>
