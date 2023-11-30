@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .clickable-image {
+      cursor: pointer;
+      width: 400px; /* 원하는 너비로 조절 */
+      height: 200px; /* 높이는 자동으로 조절 */
+        }
+
+        section{
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <section>
+
+            <div>
+                <div class="container">
+                    <img src="pic1.png" alt="Click Me" class="clickable-image" onclick="redirectToPage('../sub/sub.html')">
+                    <dl>
+                        <dt>프로젝트 제목</dt>
+                        <dd>프로젝트 내용</dd>
+                    </dl>
+                </div>
+        </section>
+
+    <script>
+    function redirectToPage(pageUrl) {
+    window.location.href = pageUrl;
+  }
+    </script>
+</body>
+</html>

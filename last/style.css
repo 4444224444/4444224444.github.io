@@ -1,0 +1,63 @@
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+  }
+
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 110px; 
+    margin: 130px;
+    font-family: 'pretendard';
+    white-space: nowrap;
+  }
+  
+  .animated-text {
+    color: #4f4f4f; 
+    transition: color 0.3s ease-in-out, transform 0.5s ease-in-out;
+    margin: 5px 0;
+  }
+  
+  .animated-text:hover {
+    color: #003cff; 
+    transform: translateX(-100px); 
+    cursor: pointer; 
+    font-weight: bold;
+  }
+
+
+  .설명글 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 130px;
+    font-family: 'pretendard';
+    border-bottom: 1px solid rgb(165, 165, 165);;
+  }
+
+  .설명글 h2 {
+    margin-top: 0;    
+    margin-bottom: 10px; 
+    font-size: 25px; 
+    color: white;
+  } 
+
+  .설명글 a {
+    margin-top: 0;    
+    margin-bottom: 10px; 
+    font-size: 15px;
+    color: rgb(165, 165, 165);
+  } 
+
+  .설명글 p {
+    margin-top: 0;    
+    margin-bottom: 10px; 
+    font-size: 15px; 
+    color: rgb(165, 165, 165);;
+  } 
