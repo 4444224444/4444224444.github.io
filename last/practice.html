@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+    }
+    
+    header {
+      font-family: 'pretendard';
+      font-size: 50px;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .image-section {
+      display: flex; 
+      align-items: center; 
+      margin: 20px; 
+      justify-content: center;
+    }
+    
+    .clickable-image {
+      cursor: pointer;
+      width: 100px;
+      height: auto;
+      margin-right: 10px; /* 간격조절 */
+    }
+
+    .text-container {
+      max-width: 400px; 
+      overflow-wrap: break-word; 
+    }
+
+    .text-container h1 {
+      font-family: 'pretendard';
+      font-weight: bold;
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 15px;
+    }
+
+    .text-container p {
+      font-family: 'pretendard';
+      font-size: 15px;
+      color: rgb(165, 165, 165)
+    }
+
+    h3, p {
+      margin: 10px 0; /* 간격조절 */
+    }
+
+    video {
+      width: 40%;
+      height: 40%;
+      cursor: pointer; 
+    }
+  </style>
+  <title>페이지이걸로만들까고민중인어쩌고저쩌꼬</title>
+</head>
+
+<body>
+  <header>
+    web publishing
+  </header>
+
+  <section class="image-section">
+    <video id="myVideo1" onclick="redirectToPage('../sub/sub1.html')" width="640" height="360" muted>
+      <source src="동영상1.mp4" type="video/mp4">
+    </video>
+
+    <div class="text-container">
+      <h1>html 연습 페이지 1</h1>
+      <p>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</p>
+    </div>
+  </section>
+
+  <section class="image-section">
+    <video id="myVideo2" onclick="redirectToPage('../layout2/layout2.html')" width="640" height="360" muted>
+      <source src="all.mp4" type="video/mp4">
+    </video>
+
+    <div class="text-container">
+      <h1>html 연습 페이지 2</h1>
+      <p>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</p>
+    </div>
+  </section>
+
+
+  
+<script>
+  function setupVideo(videoId, page) {
+    var video = document.getElementById(videoId);
+
+    video.addEventListener("loadedmetadata", function () {
+    video.pause();
+    video.currentTime = 0;
+    });
+
+    video.addEventListener("mouseenter", function () {
+      video.play();
+    });
+
+    video.addEventListener("mouseleave", function () {
+    video.pause();
+    video.currentTime = 0;
+    });
+
+    video.addEventListener("click", function () {
+          redirectToPage(page);
+    });
+  }
+
+    // 페이지 이동
+    setupVideo("myVideo1", "../sub/sub.html");
+    setupVideo("myVideo2", "../layout2/layout2.html");
+
+  function redirectToPage(page) {
+    window.location.href = page;
+  }
+  </script>
+</body>
+</html>
