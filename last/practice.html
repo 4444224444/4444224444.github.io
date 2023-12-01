@@ -26,12 +26,13 @@
       cursor: pointer;
       width: 100px;
       height: auto;
-      margin-right: 10px; /* 간격조절 */
+      margin-right: 20px; /* 간격조절 */
     }
 
     .text-container {
       max-width: 400px; 
-      overflow-wrap: break-word; 
+      overflow-wrap: break-word;
+      padding-left: 80px;
     }
 
     .text-container h1 {
@@ -49,14 +50,15 @@
     }
 
     h3, p {
-      margin: 10px 0; /* 간격조절 */
+      margin: 50px 0; /* 간격조절 */
     }
 
     video {
       width: 40%;
-      height: 40%;
+      height: auto;
       cursor: pointer; 
     }
+
   </style>
   <title>페이지이걸로만들까고민중인어쩌고저쩌꼬</title>
 </head>
@@ -70,9 +72,9 @@
     <video id="myVideo1" onclick="redirectToPage('../sub/sub1.html')" width="640" height="360" muted>
       <source src="동영상1.mp4" type="video/mp4">
     </video>
-
+  
     <div class="text-container">
-      <h1>html 연습 페이지 1</h1>
+      <h1>html 연습 페이지</h1>
       <p>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</p>
     </div>
   </section>
@@ -120,6 +122,7 @@
   function redirectToPage(page) {
     window.location.href = page;
   }
-  </script>
+</script>
+
 </body>
 </html>
