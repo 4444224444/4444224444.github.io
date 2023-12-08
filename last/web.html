@@ -5,71 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>web</title>
     <style>
-        body {
-            background-color: black;
-        }
+    body {
+        background-color: black;
+    }
         
-        header {
-            font-family: 'pretendard';
-            font-size: 70px;
-            font-weight: bold;
-            text-align: center;
-            color: white;
-            padding: 30px;
-        }
-        video {
-            width: 500px;
-            height: 250px;
-        }
+    header {
+        font-family: 'pretendard';
+        font-size: 70px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        padding: 30px;
+    }
 
-        .clickable-image {
-            cursor: pointer;
-            width: 500px; 
-            height: 250px; 
-        }
+    video {
+        width: 500px;
+        height: 250px;
+    }
 
-        section {
-            padding: 50px;
-        }
+    .clickable-image {
+        cursor: pointer;
+        width: 500px; 
+        height: 250px; 
+    }
 
-        dt {
-            color: white;
-            font-family: 'pretendard';
-            font-size: 20px;
-            text-decoration: underline;
-            text-underline-offset: 15px;
-            padding-bottom: 30px;
-        }
+    section {
+        padding: 50px;
+    }
 
-        dd {
-            color: gray;
-            font-family: 'pretendard';
-            font-size: 15px;
-            max-width: 500px;
-            overflow-wrap: break-word;
-        }
+    dt {
+        color: white;
+        font-family: 'pretendard';
+        font-size: 20px;
+        text-decoration: underline;
+        text-underline-offset: 15px;
+        padding-bottom: 30px;
+    }
 
-        #content>section>div {
-            display: flex;
-            justify-content: center;
-        }
+    dd {
+        color: gray;
+        font-family: 'pretendard';
+        font-size: 15px;
+        max-width: 500px;
+        overflow-wrap: break-word;
+    }
 
-        #content dt { 
-            font-weight: bold;
-        }
+    #content>section>div {
+        display: flex;
+        justify-content: center;
+    }
 
-        #content dd {
-            margin: 0px;
-        }
+    #content dt { 
+        font-weight: bold;
+    }
 
-        .container {
-            margin: 0px 10px;
-        }
+    #content dd {
+        margin: 0px;
+    }
+
+    .container {
+        margin: 0px 10px;
+    }
 
     </style>
 </head>
 <body>
-<div id="wrap">
+    <div id="wrap">
 
     <header>
         Web Publishing
@@ -79,7 +80,7 @@
         <section>
             <div>
                 <div class="container">
-                    <video id="myVideo" poster="pic1.jpg" onclick="redirectToPage('../sub/sub.html')" width="640" height="360" muted>
+                    <video id="video1" width="640" height="360" muted>
                         <source src="동영상1.mp4" type="video/mp4">
                     </video>
                     <dl>
@@ -87,84 +88,100 @@
                         <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
                     </dl>
                 </div>
-
-                <div>
-                    <div class="container">
-                        <img src="csspic.png" alt="Click Me" class="clickable-image" onclick="redirectToPage('../sub/css.html')">
-                        <dl>
-                            <dt>css 연습 페이지</dt>
-                            <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
-                        </dl>
-                    </div>
+    
+                <div class="container">
+                    <video id="video2" width="640" height="360" muted>
+                        <source src="cssmp4.mp4" type="video/mp4">
+                    </video>
+                    <dl>
+                        <dt>css 연습 페이지</dt>
+                        <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
+                    </dl>
+                </div>
+            </div>
         </section>
-
+    
         <section>
             <div>
                 <div class="container">
-                    <img src="pic1.png" alt="Click Me" class="clickable-image" onclick="redirectToPage('../sub/sub.html')">
+                    <video id="video3" width="640" height="360" muted>
+                        <source src="layoutmp4.mp4" type="video/mp4">
+                    </video>
                     <dl>
                         <dt>레이아웃1 페이지</dt>
                         <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
                     </dl>
                 </div>
-
-                <div>
-                    <div class="container">
-                        <img src="csspic.png" alt="Click Me" class="clickable-image" onclick="redirectToPage('../sub/css.html')">
-                        <dl>
-                            <dt>레이아웃2 페이지</dt>
-                            <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
-                        </dl>
-                    </div>
+    
+                <div class="container">
+                    <video id="video4" width="640" height="360" muted>
+                        <source src="layoutmp4.mp4" type="video/mp4">
+                    </video>
+                    <dl>
+                        <dt>레이아웃2 페이지</dt>
+                        <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
+                    </dl>
+                </div>
+            </div>
         </section>
-
+    
         <section>
             <div>
                 <div class="container">
-                    <img src="pic1.png" alt="Click Me" class="clickable-image" onclick="redirectToPage('../sub/sub.html')">
+                    <video id="video5" width="640" height="360" muted>
+                        <source src="layoutmp4.mp4" type="video/mp4">
+                    </video>
                     <dl>
                         <dt>레이아웃3 페이지</dt>
                         <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
                     </dl>
                 </div>
-
-                <div>
-                    <div class="container">
-                        <img src="csspic.png" alt="Click Me" class="clickable-image" onclick="redirectToPage('../sub/css.html')">
-                        <dl>
-                            <dt>중간평가 페이지</dt>
-                            <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
-                        </dl>
-                    </div>
-        </section>
-        
+    
+                <div class="container">
+                    <video id="video6" width="640" height="360" muted>
+                        <source src="동영상1.mp4" type="video/mp4">
+                    </video>
+                    <dl>
+                        <dt>중간평가 페이지</dt>
+                        <dd>설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글설명글</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>    
     </div>
 
-
-
     <script>
-    //비디오
-    var video = document.getElementById("myVideo");
-    
-    video.addEventListener("loadedmetadata", function() {
-        video.pause();
-        video.currentTime = 0;
-    });
+    // 비디오
+        function setupHover(videoId, imageUrl, page) {
+        var element = document.getElementById(videoId) || document.getElementById(imageUrl);
 
-    video.parentElement.addEventListener("mouseenter", function() {
-        video.play();
-    });
+            if (element) {
+                element.addEventListener("mouseenter", function () {
+                element.play();
+                });
 
-    video.parentElement.addEventListener("mouseleave", function() {
-        video.pause();
-        video.currentTime = 0;
-    });
+                element.addEventListener("mouseleave", function () {
+                    element.pause();
+                    element.currentTime = 0;
+                });
 
-   //클릭하면다른링크
-    function redirectToPage(pageUrl) {
-    window.location.href = pageUrl;
-    }
+                element.addEventListener("click", function () {
+                    redirectToPage(page);
+                });
+            }
+        }
 
-    </script>
-</body>
+
+        function redirectToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+
+        setupHover("video1", null, "../sub/sub.html");
+        setupHover("video2", null, "../sub/css.html");
+        setupHover("video3", null, "../layout1/layout1.html");
+        setupHover("video4", null, "../layout2/layout2.html");
+        setupHover("video5", null, "../layout3/layout3.html");
+        setupHover("video6", null, "../sub/sub.html");
+        </script>
+    </body>
 </html>

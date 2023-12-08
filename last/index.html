@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Index</title>
   <style>
+    .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
     body {
     display: flex;
@@ -40,6 +45,7 @@
 
   .설명글 {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: flex-start;
     margin: 130px;
@@ -49,7 +55,7 @@
 
   .설명글 h2 {
     margin-top: 0;    
-    margin-bottom: 10px; 
+    margin-bottom: 5px; 
     font-size: 25px; 
     color: white;
   } 
@@ -63,19 +69,20 @@
 
   .설명글 p {
     margin-top: 0;    
-    margin-bottom: 10px; 
+    margin-bottom: 5px; 
     font-size: 15px; 
     color: rgb(165, 165, 165);
   } 
-
+ 
   </style>
 </head>
 <body>
+  <div class="wrap">
 
   <div class="설명글">
   <h2>웹퍼블리싱</h2>
   <h2>직무수행능력평가2</h2>
-  <a>이번 평가의 주제인 포트폴리오 모음입니다. 계원예술대학교를 재학하며 어쩌고저쩌고 땨땨땨땨~~~~ 보고 싶은 전공 과목을 클릭하시면 상세 페이지로 넘어갑니다.</a>
+  <a>이번 평가 주제인 포트폴리오에 따라 1년 동안 계원예술대학교를 재학하며 제출했던 과제들을 모았습니다. 보고 싶은 과목을 클릭하시면 상세 페이지로 넘어갑니다.</a>
   <p></p>
   <p></p>
   <p>jhj030424@gmail.com</p>
@@ -83,10 +90,12 @@
   </div>
 
   <div class="text-container">
-    <p class="animated-text" onclick="redirectToPage('page1.html')">Content Design</p>
-    <p class="animated-text" onclick="redirectToPage('page2.html')">3D Design</p>
-    <p class="animated-text" onclick="redirectToPage('page3.html')">Motion Graphic</p>
+    <p class="animated-text" onclick="redirectToPage('last.html')">Content Design</p>
+    <p class="animated-text" onclick="redirectToPage('3d.html')">3D Design</p>
+    <p class="animated-text" onclick="redirectToPage('last.html')">Motion Graphic</p>
     <p class="animated-text" onclick="redirectToPage('web.html')">Web Publishing</p>
+  </div>
+
   </div>
 
   <script>
