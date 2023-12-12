@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직무수행능력평가2</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: 'Degular';
+            position: relative;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+        }
+
+        header{
+            display: flex; /*내용을 가로배치 유연하게(flex)*/
+            position: absolute;
+            top: 4%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1em;
+            font-family: 'Degular';
+            white-space: nowrap;
+            }
+
+            header ul{
+            list-style-type: none; /*리스트 모양 : 없음*/
+            display: flex;
+            padding: 0px;
+            }
+
+            header li{
+                padding: 0px 10px;
+            }
+
+            header h1{
+                margin: 5px;
+            }
+
+            header h1 span{
+                color: lightgray;
+            }
+
+        h2 {
+            display: flex; /*내용을 가로배치 유연하게(flex)*/
+            position: absolute;
+            top: 0%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            font-family: 'Degular';
+            white-space: nowrap;
+        }
+
+        h1 {
+            position: absolute;
+            top: 92%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10em;
+            white-space: nowrap;
+            text-align: center;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Final exam</h2>
+    <header>
+        <ul>
+            <li>KAYWON</li>
+            <li>INSTA</li>
+            <li>SERVICES</li>
+            <li>CONTACT</li>
+            <li>OPTION</li>
+        </ul>
+    </header>
+    
+    <h1>ROCK WILL NEVER DIE</h1>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+                "GLTFLoader": "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js",
+                "OrbitControls": "https://unpkg.com/three@0.141.0/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import { GLTFLoader } from 'GLTFLoader';
+        import * as THREE from 'three';
+        import { OrbitControls } from 'OrbitControls';
+
+        const scene = new THREE.Scene();
+        const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#canvas') });
+        renderer.outputEncoding = THREE.sRGBEncoding;
+
+        const camera = new THREE.PerspectiveCamera(30, 1);
+        camera.position.set(0, 0, 5);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.25;
+        controls.screenSpacePanning = false;
+        controls.maxPolarAngle = Math.PI / 2;
+
+        scene.background = new THREE.Color('black');
+
+        const light = new THREE.DirectionalLight(0xffff00, 10);
+        scene.add(light);
+
+        const loader = new GLTFLoader();
+        loader.load('earth_shine/scene.gltf', (gltf) => {
+            scene.add(gltf.scene);
+
+            function animate() {
+                requestAnimationFrame(animate);
+                gltf.scene.rotation.y += 0.005;
+                controls.update();
+                renderer.render(scene, camera);
+            }
+
+            animate();
+        });
+    </script>
+</body>
+
+</html>

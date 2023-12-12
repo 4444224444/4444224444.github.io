@@ -5,68 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>web</title>
     <style>
-    body {
-        background-color: black;
-    }
+        body {
+            background-color: black;
+            font-family: 'pretendard';
+            overflow: visible;
+            opacity: 0; /* 처음에 투명도 0인 거 */
+            transition: opacity 3s ease-in-out; /* 트렌지션으로 투명도 조정?? */
+            animation: fadeIn 3s ease-in-out; /* 접속했을 때 페이드 인 되는 효과 코드 */
+            animation-fill-mode: forwards; /* 애니메이션이 끝난 상태를 유지함 */
+        }
+
+        header {
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        video {
+            width: 500px;
+            height: 250px;
+        }
+
+        .clickable-image {
+            cursor: pointer;
+            width: 500px; 
+            height: 250px; 
+        }
+
+        section {
+            padding: 50px;
+        }
+
+        dt {
+            color: white;
+            font-size: 20px;
+            text-decoration: underline;
+            text-underline-offset: 15px;
+            padding-bottom: 30px;
+        }
+
+        dd {
+            color: gray;
+            font-size: 15px;
+            max-width: 500px;
+            overflow-wrap: break-word;
+        }
+
+        #content>section>div {
+            display: flex;
+            justify-content: center;
+        }
+
+        #content dt { 
+            font-weight: bold;
+        }
+
+        #content dd {
+            margin: 0px;
+        }
+
+        .container {
+            margin: 0px 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        } /* 애니메이션 불투명도 효과*/
         
-    header {
-        font-family: 'pretendard';
-        font-size: 70px;
-        font-weight: bold;
-        text-align: center;
-        color: white;
-        padding: 30px;
-    }
-
-    video {
-        width: 500px;
-        height: 250px;
-    }
-
-    .clickable-image {
-        cursor: pointer;
-        width: 500px; 
-        height: 250px; 
-    }
-
-    section {
-        padding: 50px;
-    }
-
-    dt {
-        color: white;
-        font-family: 'pretendard';
-        font-size: 20px;
-        text-decoration: underline;
-        text-underline-offset: 15px;
-        padding-bottom: 30px;
-    }
-
-    dd {
-        color: gray;
-        font-family: 'pretendard';
-        font-size: 15px;
-        max-width: 500px;
-        overflow-wrap: break-word;
-    }
-
-    #content>section>div {
-        display: flex;
-        justify-content: center;
-    }
-
-    #content dt { 
-        font-weight: bold;
-    }
-
-    #content dd {
-        margin: 0px;
-    }
-
-    .container {
-        margin: 0px 10px;
-    }
-
     </style>
 </head>
 <body>
@@ -81,7 +93,7 @@
             <div>
                 <div class="container">
                     <video id="video1" width="640" height="360" muted>
-                        <source src="동영상1.mp4" type="video/mp4">
+                        <source src="htmlmp4.mp4" type="video/mp4">
                     </video>
                     <dl>
                         <dt>html 연습 페이지</dt>
@@ -115,7 +127,7 @@
     
                 <div class="container">
                     <video id="video4" width="640" height="360" muted>
-                        <source src="layoutmp4.mp4" type="video/mp4">
+                        <source src="layout2mp4.mp4" type="video/mp4">
                     </video>
                     <dl>
                         <dt>레이아웃2 페이지</dt>
@@ -129,7 +141,7 @@
             <div>
                 <div class="container">
                     <video id="video5" width="640" height="360" muted>
-                        <source src="layoutmp4.mp4" type="video/mp4">
+                        <source src="layout3mp4.mp4" type="video/mp4">
                     </video>
                     <dl>
                         <dt>레이아웃3 페이지</dt>
@@ -151,13 +163,13 @@
     </div>
 
     <script>
-    // 비디오
+        // 비디오
         function setupHover(videoId, imageUrl, page) {
-        var element = document.getElementById(videoId) || document.getElementById(imageUrl);
+            var element = document.getElementById(videoId) || document.getElementById(imageUrl);
 
             if (element) {
                 element.addEventListener("mouseenter", function () {
-                element.play();
+                    element.play();
                 });
 
                 element.addEventListener("mouseleave", function () {
@@ -171,17 +183,21 @@
             }
         }
 
-
         function redirectToPage(pageUrl) {
             window.location.href = pageUrl;
         }
 
-        setupHover("video1", null, "../sub/sub.html");
+        setupHover("video1", null, "../sub/html.html");
         setupHover("video2", null, "../sub/css.html");
         setupHover("video3", null, "../layout1/layout1.html");
         setupHover("video4", null, "../layout2/layout2.html");
         setupHover("video5", null, "../layout3/layout3.html");
         setupHover("video6", null, "../sub/sub.html");
-        </script>
-    </body>
+
+        // 페이지를 로딩했을 때 애니메이션을 적용하는 코드
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.opacity = 1;
+        });
+    </script>
+</body>
 </html>
