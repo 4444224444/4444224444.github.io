@@ -102,7 +102,7 @@
     <h2>Final exam</h2>
     <header>
         <ul>
-            <li>KAYWON</li>
+            <div id="kaywon" onclick="goToKaywon()"><li>KAYWON</li></div>
             <li>INSTA</li>
             <li>SERVICES</li>
             <li>CONTACT</li>
@@ -165,6 +165,12 @@
 
             animate();
         });
+    </script>
+
+    <script>
+        function goToKaywon() {
+            window.location.href = '../last/web.html';
+        }
     </script>
 </body>
 
