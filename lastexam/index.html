@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>직무수행능력평가2</title>
     <style>
+        #wrap{
+                min-width: 1000px;
+                max-width: 1920px;
+        }
+
         body {
             margin: 0;
             overflow: hidden;
@@ -52,6 +57,7 @@
                 color: lightgray;
             }
 
+
         h2 {
             display: flex; /*내용을 가로배치 유연하게(flex)*/
             position: absolute;
@@ -63,20 +69,36 @@
             white-space: nowrap;
         }
 
-        h1 {
+        a {
             position: absolute;
             top: 92%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 10em;
+            font-size: 9em;
+            font-family: 'Degular';
+            text-decoration: none;
+            color: white;
             white-space: nowrap;
             text-align: center;
             margin: 0;
         }
+
+        a b {
+            display: inline-block;
+            transform-origin: 50% 50%;
+            transform: scale(1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        a:hover b {
+            transform: scale(1.2);
+        }
+        
     </style>
 </head>
 
 <body>
+    <div id="wrap">
     <h2>Final exam</h2>
     <header>
         <ul>
@@ -88,8 +110,12 @@
         </ul>
     </header>
     
-    <h1>ROCK WILL NEVER DIE</h1>
+    <a href="sub.html"><b>ROCK WILL NEVER DIE</b></a>
+    </div>
     <canvas id="canvas" width="500" height="500"></canvas>
+ 
+
+
 
     <script type="importmap">
         {

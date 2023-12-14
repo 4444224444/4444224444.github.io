@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>음악 플레이어</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 1px 20px 20px lightgray;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .audio-player {
+      width: 100%;
+      background-color: whhite
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    h2{
+        font-family: 'Degular';
+        text-align: center;
+
+    }
+
+    .navigation button {
+  color: green;
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- 이미지 -->
+  <img src="에이브릴라빈.webp" alt="음악 플레이어 이미지">
+  <div>
+    <h2>Sk8er boi</h2>
+    <div class="navigation">
+        <button id="prev" class="action-btn"><i class="fa-sharp fa-solid fa-backward"></i></button>
+        <button id="play" class="actiong-btn big"><i class="fa-solid fa-play"></i></button>
+        <button id="next" class="actiong-btn"><i class="fa-sharp fa-solid fa-forward"></i></button>
+    </div>
+</div>
+   
+  <!-- 음악 플레이어 -->
+  <div class="audio-player">
+    <audio controls>
+      <source src="Sk8erboi.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    
+  
+  </div>
+</div>
+
+<script>
+  // JavaScript 코드를 추가하여 음악 재생바를 제어할 수 있습니다.
+  const audioPlayer = document.querySelector('audio');
+  const seekbar = document.getElementById('seekbar');
+
+  audioPlayer.addEventListener('timeupdate', function() {
+    const currentTime = audioPlayer.currentTime;
+    const duration = audioPlayer.duration;
+
+    // 재생바 업데이트
+    seekbar.value = (currentTime / duration) * 100;
+  });
+
+  seekbar.addEventListener('input', function() {
+    const seekTime = (seekbar.value / 100) * audioPlayer.duration;
+
+    // 음악 위치 이동
+    audioPlayer.currentTime = seekTime;
+  });
+</script>
+
+</body>
+</html>

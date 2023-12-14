@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>이미지 갤러리</title>
+</head>
+<style>
+    header {
+        display: flex;
+        position: absolute;
+        top: 4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1em;
+        font-family: 'Degular';
+        white-space: nowrap;
+    }
+
+    header ul {
+        list-style-type: none;
+        display: flex;
+        padding: 0px;
+    }
+
+    header li {
+        padding: 0px 10px;
+        text-decoration: none; /* 밑줄 제거 */
+        color: inherit; /* 기본 텍스트 색상 사용 */
+        cursor: pointer; /* 포인터 형태로 변경 */
+    }
+
+    header a {
+        text-decoration: none; /* 링크 밑줄 제거 */
+        color: inherit; /* 기본 텍스트 색상 사용 */
+    }
+
+    header a:hover {
+        text-decoration: none; /* 링크 호버 시 밑줄 제거 */
+    }
+
+    h2 {
+        display: flex;
+        position: absolute;
+        top: 0%;
+        left: 7%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2em;
+        font-family: 'Degular';
+        white-space: nowrap;
+    }
+
+    body {
+        margin: 0;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        opacity: 0; /* 처음에 투명도 0인 거 */
+            transition: opacity 1s ease-in-out; /* 트렌지션으로 투명도 조정?? */
+            animation: fadeIn 2s ease-in-out; /* 접속했을 때 페이드 인 되는 효과 코드 */
+            animation-fill-mode: forwards; /* 애니메이션이 끝난 상태를 유지함 */
+    }
+
+    .gellery-container {
+        overflow: hidden;
+        width: 1200px;
+        margin: 10px auto;
+    }
+
+    .gellery {
+        display: flex;
+        width: 1000px;
+        transition: transform 0.5s ease;
+        cursor: grab;
+        user-select: none;
+    }
+
+    .gellery:active {
+        cursor: grabbing;
+    }
+
+    .gellery img {
+        margin-right: 100px;
+        width: 400px;
+        height: auto;
+        border-radius: 50%;
+        transition: border-radius 0.3s ease;
+    }
+
+    .gellery img:hover {
+        border-radius: 0;
+    }
+
+    @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        } /* 애니메이션 불투명도 효과*/
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh; 
+    margin-bottom: 200px; 
+    
+
+        }
+
+      
+        .image-container img {
+            width: 800px;
+            height: 300px;
+            padding-top: 600px;
+        }
+
+        .image-container p {
+            color: white;
+            margin-left: 200px;
+            margin-right: 200px;
+            font-size: 15px;
+            font-family: 'pretendard';
+            text-align: center;
+            word-wrap: break-word; 
+        }
+        
+
+
+</style>
+
+<body>
+    <div id="wrap">
+        <h2>Final exam</h2>
+        <header>
+            <ul>
+                <a href="index.html"><li>HOME</li></a>
+                <li>INSTA</li>
+                <li>SERVICES</li>
+                <li>CONTACT</li>
+                <li>OPTION</li>
+            </ul>
+        </header>
+
+        <div class="image-container">
+        <img src="세계지도.png">
+        <p>락은 1950년대 로큰롤(Rock and Roll)에서 비롯되었다. 1960년대 중반, 로큰롤이 음악 형식의 하나로 자리 잡으면서 폭넓은 관심을 끌었고, 1960년대 후반에는 락 음악의 뿌리였던 블루스에서 벗어나 간단히 락 음악이라 부르기 시작했다. 이후 락 음악은 음반사업 뿐만 아니라 영화, 패션, 정치 풍조에까지 영향을 미쳤으며, 음악의 한계를 뛰어넘어 새로운 음악과 결합 하면서 오늘날까지 계속 발전해오고 있다. 락이란 무엇인가를 음악적으로 명확하게 정의할 수 없다. 락은... 락이다.</p>
+        </div>
+
+
+        <div class="gellery-container">
+            <h1>나라별 추천 음반</h1>
+            <div class="gellery" id="gellery">
+                <a href="page1.html"><img src="에이브릴라빈.webp" alt="Image 1"></a>
+                <a href="page2.html"><img src="메탈리카.jpg" alt="Image 2"></a>
+                <img src="오아시스.jpg" alt="Image 3">
+                <img src="난너없이.jpg" alt="Image 4">
+                <img src="라스베가스.jpg" alt="Image 5">
+            </div>
+        </div>
+    </div>
+    <script>
+        let isDragging = false;
+        let startClientX = 0;
+        let startTranslate = 0;
+        let currentTranslate = 0;
+
+        const gellery = document.getElementById('gellery');
+
+        gellery.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startClientX = e.clientX;
+            startTranslate = currentTranslate;
+            gellery.classList.add('img-dragging');
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const delta = e.clientX - startClientX;
+                currentTranslate = startTranslate + delta;
+                gellery.style.transform = `translateX(${currentTranslate}px)`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                gellery.classList.remove('img-dragging');
+            }
+        });
+
+        document.addEventListener('mouseleave', () => {
+            if (isDragging) {
+                isDragging = false;
+                gellery.classList.remove('img-dragging');
+            }
+        });
+
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+    <script>
+        // 페이지를 로딩했을 때 애니메이션을 적용하는 코드
+              document.addEventListener("DOMContentLoaded", function () {
+                  document.body.style.opacity = 1;
+              });
+      </script>
+</body>
+</html>
