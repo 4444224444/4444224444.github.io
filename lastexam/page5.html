@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/412379eca8.js" crossorigin="anonymous"></script>
+  <title>page5</title>
+  <style>
+    
+   body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    opacity: 0; /* 처음에 투명도 0인 거 */
+    transition: opacity 1s ease-in-out; /* 트렌지션으로 투명도 조정?? */
+    animation: fadeIn 2s ease-in-out; /* 접속했을 때 페이드 인 되는 효과 코드 */
+    animation-fill-mode: forwards; /* 애니메이션이 끝난 상태를 유지함 */
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black; 
+    color: white; 
+    padding: 10px; 
+    border-bottom: 1px solid white;
+    z-index: 1000;
+  }
+
+  header ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  header li {
+    margin-right: 20px; 
+  }
+
+  header a {
+    text-decoration: none;
+    color: white; /* 링크 텍스트 색상 설정 */
+  }
+
+  header a:hover {
+    text-decoration: none; /* 링크 호버 시 밑줄 제거 */
+  }
+
+  h2 {
+    display: flex;
+    position: absolute;
+    top: 0%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    font-family: 'Degular';
+    white-space: nowrap;
+  }
+
+  .container {
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 400px;
+    background-color: white;
+    box-shadow: 1px 20px 20px lightgray;
+    position: fixed;
+    left: 250px; 
+    top: 55%; 
+    transform: translateY(-50%); 
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Dengular';
+    font-size: 40px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .navigation button {
+    color: black;
+    background-color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  .progress-container {
+    width: 100%;
+    background-color: gray;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .progress {
+    height: 100%;
+    width: 0;
+    background-color: black;
+    transition: width 0.1s linear; 
+  }
+
+  #content > section > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  #content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 150px;
+  }
+
+  #content > section > div > h2 {
+    font-size: 50px;
+    font-family: 'Degular';
+    color: white;
+    margin-left: 900px;
+    margin-top: 120px;
+  }
+    
+  section {
+    width: 300px;
+    margin-bottom: 20px; 
+  }
+
+  .textcontainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+  }
+
+  dt {
+    position: relative;
+    margin-bottom: 20px; /* <dt> 요소 사이의 간격 조정 */
+    font-family: 'Degular';
+    font-size: 20px;
+    white-space: nowrap;
+    color: white;
+  }
+
+  span {
+    position: relative;
+    margin-bottom: 50px; /* <dt> 요소 사이의 간격 조정 */
+    margin-right: 10px;
+    font-family: 'Degular';
+    font-size: 40px;
+    white-space: nowrap;
+  }
+
+  .line {
+    border-top: 1px solid white;
+    width: 250px; /* 원하는 라인의 길이로 조정하세요 */
+    margin-top: 10px;
+  }
+
+  section {
+    width: 300px; /* 각 섹션의 폭 조절 */
+    margin-bottom: 20px;
+    margin-left: 600px;
+  } 
+
+  @keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+
+    to {
+    opacity: 1;
+    }
+  }
+  </style>
+</head>
+<body>
+    <h2>Final exam</h2>
+    <header>
+        <ul>
+          <a href="index.html"><li>HOME</li></a>
+          <li>INSTA</li>
+          <li>SERVICES</li>
+          <li>CONTACT</li>
+          <li>OPTION</li>
+        </ul>
+    </header>
+
+<div class="container">
+  <audio id="audio" src="ne.mp3"></audio>
+  <img src="라스베가스.jpg" alt="음악 플레이어 이미지">
+    <h1 class="title">Chase the Light!</h1>
+    <div class="progress-container" id="progress-container">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="navigation">
+      <button id="prev" class="action-btn"><i class="fa-sharp fa-solid fa-backward"></i></button>
+      <button id="play" class="action-btn big"><i class="fa-solid fa-play"></i></button>
+      <button id="next" class="action-btn"><i class="fa-sharp fa-solid fa-forward"></i></button>
+    </div>
+</div>
+
+
+<div id="content">
+  
+  <section>
+      <div>
+        <h2>Track List</h2>
+          <div class="textcontainer">
+              <div class="line"></div>
+                  <dt><span>01</span>Chase the Light!</dt>
+              </div>
+
+          <div class="textcontainer">
+              <div class="line"></div>
+                 <dt><span>02</span>Jump Around</dt>
+          </div>
+      </div>
+  </section>
+
+  <section>
+    <div>
+        <div class="textcontainer">
+            <div class="line"></div>
+                <dt><span>03</span>The Answer for Unequal</dt>
+            </div>
+
+        <div class="textcontainer">
+            <div class="line"></div>
+               <dt><span>04</span>Shake Your Body</dt>
+        </div>
+    </div>
+</section>
+
+<section>
+  <div>
+      <div class="textcontainer">
+          <div class="line"></div>
+              <dt><span>05</span>Believe Yourself</dt>
+          </div>
+
+      <div class="textcontainer">
+          <div class="line"></div>
+             <dt><span>06</span>interlude</dt>
+      </div>
+  </div>
+</section>
+
+<section>
+  <div>
+      <div class="textcontainer">
+          <div class="line"></div>
+              <dt><span>07</span>Short but Seems Long</dt>
+          </div>
+
+      <div class="textcontainer">
+          <div class="line"></div>
+             <dt><span>08</span>Take me Out!!</dt>
+      </div>
+  </div>
+</section>
+</div>
+
+
+<script>
+  const playBtn = document.getElementById("play");
+  const musicContainer = document.querySelector(".container");
+  const audio = document.getElementById("audio");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+  const title = document.querySelector(".title");
+  const progress = document.getElementById("progress");
+  const progressContainer = document.getElementById('progress-container');
+
+  const songs = ["Chase the Light!"];
+  let songIndex = 0;
+
+  loadSong(songs[songIndex]);
+
+  function loadSong(song) {
+    title.innerText = song;
+    audio.src = `ne.mp3`;
+  }
+
+  function playMusic() {
+    musicContainer.classList.add("play");
+    playBtn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+    audio.play();
+  }
+
+  function pauseMusic() {
+    musicContainer.classList.remove('play');
+    playBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+    audio.pause();
+  }
+
+  function playPrevSong() {
+    songIndex--;
+
+    if (songIndex < 0) {
+      songIndex = songs.length - 1;
+    }
+
+    loadSong(songs[songIndex]);
+
+    playMusic();
+  }
+
+  function playNextSong() {
+    songIndex++;
+
+    if(songIndex >= songs.length){
+        songIndex = 0;
+    }
+
+    loadSong(songs[songIndex]);
+    playMusic();
+  }
+
+  playBtn.addEventListener("click", () => {
+    const isPlaying = musicContainer.classList.contains('play');
+
+    if(isPlaying){
+        pauseMusic();
+    } else{
+        playMusic();
+    }
+  });
+
+  prevBtn.addEventListener("click", playPrevSong);
+  nextBtn.addEventListener('click', playNextSong);
+  audio.addEventListener('ended', playNextSong);
+
+  function updateProgress(e){
+    const {duration, currentTime} = e.srcElement;
+
+    const progressPer = (currentTime / duration) * 100;
+
+    progress.style.width = `${progressPer}%`;
+  }
+
+  function changeProgress(e){
+    const width = e.target.clientWidth;
+    const offsetX = e.offsetX;
+    const duration = audio.duration;
+
+    audio.currentTime = (offsetX / width) * duration; 
+  }
+
+  progressContainer.addEventListener('click', changeProgress);
+  audio.addEventListener('timeupdate', updateProgress);
+</script>
+<script>
+  
+  // 페이지를 로딩했을 때 애니메이션을 적용하는 코드
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.opacity = 1;
+        });
+</script>
+</body>
+</html>

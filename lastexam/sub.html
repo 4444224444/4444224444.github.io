@@ -9,33 +9,31 @@
 </head>
 <style>
     header {
-        display: flex;
-        position: absolute;
-        top: 4%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 1em;
-        font-family: 'Degular';
-        white-space: nowrap;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: black; /* 상단 바 배경색을 설정하세요. */
+        color: white; /* 텍스트 색상 설정 */
+        padding: 10px; /* 필요에 따라 여백 조절 */
+        border-bottom: 1px solid white;
+        z-index: 1000;
     }
 
     header ul {
         list-style-type: none;
         display: flex;
-        padding: 0px;
+        padding: 0;
+        margin: 0;
     }
 
     header li {
-        padding: 0px 10px;
-        text-decoration: none; /* 밑줄 제거 */
-        color: inherit; /* 기본 텍스트 색상 사용 */
-        cursor: pointer; /* 포인터 형태로 변경 */
+        margin-right: 20px; /* 각 메뉴 간의 간격을 조절하세요. */
     }
 
     header a {
-        text-decoration: none; /* 링크 밑줄 제거 */
-        color: inherit; /* 기본 텍스트 색상 사용 */
+        text-decoration: none;
+        color: white; /* 링크 텍스트 색상 설정 */
     }
 
     header a:hover {
@@ -63,9 +61,55 @@
         justify-content: center;
         height: 100vh;
         opacity: 0; /* 처음에 투명도 0인 거 */
-            transition: opacity 1s ease-in-out; /* 트렌지션으로 투명도 조정?? */
-            animation: fadeIn 2s ease-in-out; /* 접속했을 때 페이드 인 되는 효과 코드 */
-            animation-fill-mode: forwards; /* 애니메이션이 끝난 상태를 유지함 */
+        transition: opacity 1s ease-in-out; /* 트렌지션으로 투명도 조정?? */
+        animation: fadeIn 2s ease-in-out; /* 접속했을 때 페이드 인 되는 효과 코드 */
+        animation-fill-mode: forwards; /* 애니메이션이 끝난 상태를 유지함 */
+    }
+
+    .artist-container {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        width: 250px; /* 조절 가능한 이미지 폭 */
+        transition: width 0.3s ease-in-out;
+        margin-top: 600px;
+    }
+
+    .artist-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .overlay img, .overlay p {
+        margin: 5px;
+        color: white;
+        font-size: 30px;
+        font-family: 'pretendard';
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .artist-container:hover {
+        width: 350px; /* 펼쳐진 너비 조절 */
+    }
+
+    .artist-container:hover .overlay {
+        opacity: 1;
     }
 
     .gellery-container {
@@ -99,49 +143,52 @@
     }
 
     @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        } /* 애니메이션 불투명도 효과*/
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+         }
+    } /* 애니메이션 불투명도 효과*/
 
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh; 
-    margin-bottom: 200px; 
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh; 
+        margin-bottom: 200px; 
+        pointer-events: none;
+    }
+
+    .image-container img {
+        width: 800px;
+        height: 300px;
+        padding-top: 1500px;
+    }
+
+    .image-container p {
+        color: white;
+        margin-left: 200px;
+        margin-right: 200px;
+        font-size: 15px;
+        font-family: 'pretendard';
+        text-align: center;
+        word-wrap: break-word; 
+    }
     
-
-        }
-
-      
-        .image-container img {
-            width: 800px;
-            height: 300px;
-            padding-top: 600px;
-        }
-
-        .image-container p {
-            color: white;
-            margin-left: 200px;
-            margin-right: 200px;
-            font-size: 15px;
-            font-family: 'pretendard';
-            text-align: center;
-            word-wrap: break-word; 
-        }
-        
-
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-top: 50px; 
+    }
 
 </style>
 
 <body>
     <div id="wrap">
-        <h2>Final exam</h2>
         <header>
             <ul>
                 <a href="index.html"><li>HOME</li></a>
@@ -151,24 +198,70 @@
                 <li>OPTION</li>
             </ul>
         </header>
-
+      
+        <section>
         <div class="image-container">
         <img src="세계지도.png">
         <p>락은 1950년대 로큰롤(Rock and Roll)에서 비롯되었다. 1960년대 중반, 로큰롤이 음악 형식의 하나로 자리 잡으면서 폭넓은 관심을 끌었고, 1960년대 후반에는 락 음악의 뿌리였던 블루스에서 벗어나 간단히 락 음악이라 부르기 시작했다. 이후 락 음악은 음반사업 뿐만 아니라 영화, 패션, 정치 풍조에까지 영향을 미쳤으며, 음악의 한계를 뛰어넘어 새로운 음악과 결합 하면서 오늘날까지 계속 발전해오고 있다. 락이란 무엇인가를 음악적으로 명확하게 정의할 수 없다. 락은... 락이다.</p>
         </div>
+        </section>
 
+        <section>
+        <div class="artist-container">
+            <img src="에이브릴라빈프로필.png" alt="Image 1">
+            <div class="overlay">
+                <p>Avril Lavigne</p>
+                <p>(Canada)</p>
+            </div>
+        </div>
+        
+        <div class="artist-container">
+          <img src="메탈리카프로필.png" alt="Image 1">
+          <div class="overlay">
+              <p>Metallica</p>
+              <p>(United States of America)</p>
+          </div>
+        </div>
+        
+        <div class="artist-container">
+          <img src="오아시스프로필.png" alt="Image 1">
+          <div class="overlay">
+              <p>Oasis</p>
+              <p>(United Kingdom)</p>
+          </div>
+        </div>
+        
+        <div class="artist-container">
+          <img src="조승연프로필.png" alt="Image 1">
+          <div class="overlay">
+              <p>Woodz</p>
+              <p>(Korea)</p>
+          </div>
+        </div>
+        
+        <div class="artist-container">
+          <img src="라스베가스 프로필.png" alt="Image 1">
+          <div class="overlay">
+              <p>Fear and loathing in Las Vegas</p>
+              <p>(Japan)</p>
+          </div>
+        </div>
+        </section>
 
+        <section>
         <div class="gellery-container">
             <h1>나라별 추천 음반</h1>
             <div class="gellery" id="gellery">
                 <a href="page1.html"><img src="에이브릴라빈.webp" alt="Image 1"></a>
                 <a href="page2.html"><img src="메탈리카.jpg" alt="Image 2"></a>
-                <img src="오아시스.jpg" alt="Image 3">
+                <a href="page3.html"><img src="오아시스.jpg" alt="Image 3"></a>
                 <img src="난너없이.jpg" alt="Image 4">
                 <img src="라스베가스.jpg" alt="Image 5">
             </div>
         </div>
-    </div>
+        </section>
+        
+
     <script>
         let isDragging = false;
         let startClientX = 0;
@@ -210,6 +303,7 @@
             e.preventDefault();
         });
     </script>
+
     <script>
         // 페이지를 로딩했을 때 애니메이션을 적용하는 코드
               document.addEventListener("DOMContentLoaded", function () {
