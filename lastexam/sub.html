@@ -10,7 +10,7 @@
 <style>
     #wrap {
     width: 100%;
-    min-height: 1000px;
+    min-height: 100%;
     margin: 0 auto; /* 중앙 정렬을 위한 margin 추가 */
 }
 
@@ -161,23 +161,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
         height: 100vh; 
-        margin-bottom: 200px; 
+        margin-bottom: 150px; 
         pointer-events: none;
         position: relative;
+        padding-top: 1500px;
+        padding-left: 100px;
+        
     }
 
     .image-container img {
         width: 800px;
         height: 300px;
-        padding-top: 1500px;
+        object-fit: cover;
     }
 
     .image-container p {
         color: white;
-        margin-left: 200px;
-        margin-right: 200px;
+        margin-left: 100px;
+        margin-right: 100px;
         font-size: 15px;
         font-family: 'pretendard';
         text-align: center;
@@ -234,6 +236,7 @@
         <p>락은 1950년대 로큰롤(Rock and Roll)에서 비롯되었다. 1960년대 중반, 로큰롤이 음악 형식의 하나로 자리 잡으면서 폭넓은 관심을 끌었고, 1960년대 후반에는 락 음악의 뿌리였던 블루스에서 벗어나 간단히 락 음악이라 부르기 시작했다. 이후 락 음악은 음반사업 뿐만 아니라 영화, 패션, 정치 풍조에까지 영향을 미쳤으며, 음악의 한계를 뛰어넘어 새로운 음악과 결합 하면서 오늘날까지 계속 발전해오고 있다. 락이란 무엇인가를 음악적으로 명확하게 정의할 수 없다. 락은... 락이다.</p>
         </div>
         </section>
+       
 
         <section>
         <div class="artist-container">
@@ -288,6 +291,8 @@
                 <a href="page5.html"><img src="라스베가스.jpg" alt="Image 5"></a>
             </div>
         </div>
+
+    </div>
         </section>
         
 
