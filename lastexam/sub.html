@@ -9,9 +9,10 @@
 </head>
 <style>
     #wrap {
-        min-width: 1000px;
-        max-width: 1920px;
-    }
+    width: 100%;
+    min-height: 1000px;
+    margin: 0 auto; /* 중앙 정렬을 위한 margin 추가 */
+}
 
     header {
         position: fixed;
@@ -164,6 +165,7 @@
         height: 100vh; 
         margin-bottom: 200px; 
         pointer-events: none;
+        position: relative;
     }
 
     .image-container img {
